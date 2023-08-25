@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Dynamic Website using node js</title>
+  </head>
+  <body>
+     {{>navbar data=details}}
+     {{>slider slides=slides}} 
+     {{!-- banner1 Section --}}
+     <section class="banner1_section background1 py-5">
+       <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Start learning new technolgies here!!</h2>
+            {{!-- <p> Mansi</p> --}}
+            <button class="btn btn-outline-dark mt-4">Upcoming Routes</button>
+          </div>
+        </div>
+       </div>
+     </section>
+     
+
+
+    {{!-- Services Section --}}
+    <section id="services_section" class="py-3">
+      <div class="container">
+        <h2 class="text-center text-dark">Guided Tutorials Routes</h2>
+        <div class="row mt-5">
+        {{!-- first service col --}}
+        {{#each services}}
+
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body  ">
+                <div class="container text-center py-3">
+                  <i class="{{this.icon}} service_icon text-grey"></i>
+                </div>
+                <h5 class="card-title">{{this.title}}</h5>
+                <p>{{this.description}}</p>
+                <a href="{{this.link}}">{{this.linkText}}</a>
+                <a href="{{this.link1}}" class="ml">{{this.linkText1}}</a>
+              </div>
+            </div>
+          </div>
+
+        {{/each}}
+        </div>
+      </div>
+    </section>
+     {{!-- banner1 section  --}}
+    <section class="banner1_section pt-5">
+      <dic class="container">
+        <div class="row">
+          <div class="col md-6 text-center py-5 ">
+            {{!-- left side --}}
+            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+            <h3>Nurturing Knowledge, Not Bank Balances</h3>
+          <p class="mt-2" style="font-size: 17px;">Embracing the purest essence of education, we stand firm in our pledge to cultivate brilliance without boundaries. Our mission transcends financial gains, focusing on fostering intellect, curiosity, and dreams. Join us in a journey where knowledge flourishes and minds soar, unburdened by financial barriers.</p>
+           <a href="/courses" class="btn btn-dark mt-2">Go to Courses</a>
+           </div> 
+          </div>
+        <div class="col-md-6">
+          {{!-- right side --}}
+          <img src="/static/images/graphic1.jpg" style="max-height: 300px; margin-left: auto;" alt=""/>
+        </div>
+      </div>
+    </div>
+  </dic>
+  </section>
+    {{!-- banner2 section  --}}
+    <section class="banner2_section py-5">
+      <dic class="container">
+        <div class="row">
+          <div class="col md-6 text-center py-2 ">
+            {{!-- left side --}}
+            <img src="/static/images/graphic2.jpg" style="max-height:300px;" alt=""/>
+          </div>
+        <div class="col-md-6">
+          {{!-- right side --}}
+          <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+          <h3>Unlocking Success Through Guided Paths</h3>
+          <p class="mt-2"style="font-size: 17px;">Experience transformative growth with our expert-guided journey. Our carefully curated paths lead you towards success, providing invaluable insights and knowledge. Let our guidance empower you to overcome challenges and achieve your goals, unlocking a world of possibilities.</p>
+           <a href="/courses" class="btn btn-dark mt-2">Go to Courses</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dic>
+    </section>
+    {{!-- Contact us section --}}
+    <section id="contact_us_section" class="py-5 background1">
+      <div class="container">
+        <h2 class="text-center text-dark">Contact Us</h2>
+        <div class="col-md-12">
+          <form action="/process-contact-form" method ="post"> 
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="contactNumberField" class="form-label">Your Contact Number</label>
+              <input name="phone" type="number" class="form-control" id="contactNumberField">
+            </div>
+            <div class="form-floating mt-2">
+              <textarea name="query" style="height:250px;" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+              <label for="queryField">Your query</label>
+            </div>
+            <div class="container text-center mt-3">
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+{{!-- about section --}}
+<section class="about_section py-5 " id="about_section">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>About</h2>
+        <p style="font-size: 17px;">🌟 Welcome to TutorialRoute! Your Pathway to Excellence 🌟
+Discover your true potential with our curated resources and expert roadmaps. Whether you're a beginner or a seasoned enthusiast, we're here to light the way to your success.
+🗺️ Expert Roadmaps: Navigate your learning journey effortlessly with step-by-step roadmaps crafted by professionals. From mastering languages to honing technical skills, we've got your route planned.
+📚 Curated Resources: Dive into a treasure trove of resources designed to inspire and educate. Our collection spans diverse topics, ensuring there's something for every passion and interest.
+🚀 Elevate Your Skills: Unleash your brilliance with us. Join TutorialRoute today and embark on a transformative learning experience like no other.</p>
+        <button class="btn btn-dark btn-md">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer background1 text-center py-5">
+  <div class="container">
+    <div class="row">
+<div class="col-md-12">
+  {{!-- <div class="text-center p-4" style="background-color:rgba(0, 0, 0,0.05);">
+    <a class ="text-reset fw-bold" href="https://mbootstrap.com/">Info Technical Solution</a>
+  </div> --}}
+  @ 2023 Copyright:<span>TutorialRoute</span>
+</div>
+    </div>
+  </div>
+</footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+  </body>
+</html>
