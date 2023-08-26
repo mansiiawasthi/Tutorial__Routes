@@ -111,7 +111,7 @@ const routes = require('./routes/main');
 const Detail = require("./models/Details");
 const Slider = require("./models/slider");
 const Service = require("./models/Service");
-
+const Contact = require("./models/Contact");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/static', express.static("public"));
 app.use('', routes);
