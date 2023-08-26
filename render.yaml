@@ -2,5 +2,6 @@ services:
   - name: web
     buildCommand: npm run build
     startCommand: npm start
+    root: src  # Specify the subdirectory containing your project files
     envVars:
       NODE_ENV: production
